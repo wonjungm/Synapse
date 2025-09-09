@@ -1,4 +1,4 @@
-# Project Synapse: Ideation (v0.2)
+# Project Synapse: Ideation (v0.9)
 
 ## 프로젝트 아이디어 1: 초거대 AI의 경량화를 통한 AI 연구자/개발자 생산성 향상
 
