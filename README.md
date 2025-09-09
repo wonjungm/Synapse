@@ -1,4 +1,4 @@
-# Project Synapse (v0.1)
+# Project Synapse (v0.9)
 
 ## 팀 (Team)
 - **팀명 (Team Name):** Synapse (시냅스)
@@ -17,5 +17,5 @@
 - `GROUNDRULES.md`: 원활한 협업을 위한 팀 내부 규칙을 정의합니다.
 
 ## 버전 정보 (Version)
-- 본 파일은 프로젝트의 초기 구상을 담은 Version 0.1 초안입니다.
-- This document is a v0.1 draft containing the initial project plan.
+- 본 파일은 프로젝트의 초기 구상을 담은 Version 0.9 초안입니다.
+- This document is a v0.9 draft containing the initial project plan.
