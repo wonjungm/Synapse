@@ -6,10 +6,10 @@
 - **지도교수 (Advisor):** 심재형 교수님
 
 ## 프로젝트 개요 (Project Overview)
-본 프로젝트는 대규모 언어 모델(LLM)의 막대한 연산량과 메모리 문제를 해결하기 위한 경량화 및 최적화 기법을 탐구하고 구현하는 것을 목표로 합니다. 최신 연구 동향을 바탕으로, 특정 기술(예: 양자화, 가지치기, 지식 증류)을 심층적으로 분석하고 실제 모델에 적용하여 효율성과 성능 사이의 최적점을 찾는 연구를 진행합니다.
+본 프로젝트는 대규모 언어 모델(LLM)의 지식 증류 과정에서 발생하는 막대한 연산량과 GPU 자원 활용 비효율 문제를 해결하는 것을 목표로 합니다. 이를 위해 다중 GPU 환경에서의 모델 파티셔닝 및 스케줄링 기법을 탐구하고 구현하여, 연산 부하를 균형 있게 분산시키고 통신 오버헤드를 최소화하는 전략을 개발합니다. 최신 분산 학습 프레임워크와 병렬화 기법을 결합해 지식 증류 파이프라인을 최적화하고, 다양한 GPU 환경에서 효율성과 성능 사이의 최적점을 찾는 연구를 진행합니다.
 
 ## 주요 키워드 (Keywords)
-`LLM`, `Model Compression`, `Optimization`, `Quantization`, `Pruning`, `Knowledge Distillation`
+`LLM`, `Knowledge Distillation`, `Model Partitioning`, `Multi-GPU Training`, `Scheduling`, `Distributed Optimization`
 
 ## 저장소 구조 (Repository Structure)
 - `README.md`: 프로젝트의 개요와 목표를 설명합니다.
