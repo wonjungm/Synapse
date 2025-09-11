@@ -10,5 +10,5 @@
 |Pain Point|GPU 자원 활용 비효율, 통신 오버헤드와 병목 현상, 확장성 부족|
 |사용할 소프트웨어 패키지의 명칭과 핵심기능/용도|PyTorch: 기본 딥러닝 프레임워크. 모델 정의, 학습 루프 구현, GPU 연산 지원<br>DeepSpeed: 대규모 모델 학습 최적화. 파이프라인 병렬화, ZeRO 메모리 최적화, 분산 학습 지원|
 |사용할 소프트웨어 패키지의 명칭과 URL|PyTorch: https://pytorch.org/<br>DeepSpeed: https://www.deepspeed.ai/|
-|팀그라운드룰|GroundRule.md|
+|팀그라운드룰|https://github.com/wonjungm/Synapse/blob/a5cbcfbee38afb6d1e9854926609495f76ede18b/GroundRule.md|
 |최종수정일|2025.09.11|
