@@ -1,4 +1,4 @@
-# Team Synapse: Ground Rules (v0.9)
+# Team Synapse: Ground Rules (v1.0)
 
 ## 목표 (Our Goal)
 - 상호 존중과 적극적인 소통을 바탕으로 성공적인 프로젝트를 완성하고, 함께 성장하는 것을 목표로 합니다.
