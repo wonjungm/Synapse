@@ -1,0 +1,18 @@
+Total memory available on device: 16228416.00 KB
+
+[Info] DP duration: 61.977 ms
+
+SNet partition: [12, 13, 15, 17]
+TNet partition: [9, 6, 6, 9]
+Stage 0: SNet = ('OK', 1014178.25), TNet = ('OK', 1562717.75)
+Stage 1: SNet = ('OK', 646266.0), TNet = ('OK', 1528197.75)
+Stage 2: SNet = ('OK', 594660.0), TNet = ('OK', 1528197.75)
+Stage 3: SNet = ('OK', 565084.296875), TNet = ('OK', 1536530.046875)
+
+[Imbalance Ratio Test]
+Optimized SNet ratio 	 | Per-stage Times(s)
+1.041 	| ['0.074', '0.070', '0.070', '0.070']
+1.440 	| ['0.050', '0.063', '0.081', '0.109']
+Optimized TNet ratio 	 | Per-stage Times(s)
+1.017 	| ['0.102', '0.104', '0.105', '0.106']
+1.828 	| ['0.086', '0.070', '0.071', '0.191']

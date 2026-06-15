@@ -1,0 +1,36 @@
+tspipe:
+  train:  
+    deferred_batch_norm: false
+    save_model_every_iter: 100
+    
+  model_split: 
+
+    # 배치 512
+    #target: [9, 6, 6, 9]
+    #online: [9, 12, 16, 20]
+
+    # 배치 256
+    #target: [9, 6, 6, 9]
+    #online: [9, 11, 16, 21]
+    
+    # 배치 128
+    #target: [9, 6, 6, 9]
+    #online: [8, 11, 17, 21]
+
+    # 배치 64
+    target: [9, 7, 7, 7]
+    online: [8, 13, 20, 16]
+    
+  
+  optimizer:
+    skip_optimizer: False
+    num_skip_initial_staleness: 0
+    gradient_accumulation: 1
+    reduce_verbose: False
+
+  gpipe_emulation:
+    enabled: True
+    num_ubatch: 1
+
+  async_param_update_emulation:
+    enabled: False

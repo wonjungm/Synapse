@@ -1,0 +1,1 @@
+{"timestamp": "2026-04-01T00:03:41.012454", "event_type": "gpu_failure", "gpu_id": 0, "partition_id": 0, "old_config": null, "new_config": null, "recovery_time_ms": null, "details": {"failure_reason": "process_died", "source": "process_health_monitor"}}

@@ -1,0 +1,498 @@
+nohup: ignoring input
+[E2E] BASE_SAVE_ROOT=./results RUN_NOTE=e2e_failover_batch128_20_100_0406_20260514_164053 RUN_DIR=./results/e2e_failover_batch128_20_100_0406_20260514_164053
+[E2E] Starting failover loop...
+[E2E] 🔌 Port allocation: RESTART_COUNT=0, computed port=31200 (spacing=100 to avoid TIME_WAIT)
+[E2E] Fresh start/default -> CUDA_VISIBLE_DEVICES=0,1,2,3, partitions=4
+[E2E] Dist env: MASTER_IP=127.0.0.1, NCCL_DEBUG=INFO, NCCL_IB_DISABLE=1, NCCL_P2P_DISABLE=1, NCCL_SOCKET_IFNAME=lo, GLOO_SOCKET_IFNAME=lo, TP_SOCKET_IFNAME=lo
+[DEBUG] NCCL PORT: 31200, RESTART_COUNT: 0
+2026-05-14 16:40:56,337 - planner.mathematical_optimizer - INFO - ✅ Mathematical model components loaded successfully (relative import)
+2026-05-14 16:40:56,349 - root - INFO - args = Namespace(save_root='./results/e2e_failover_batch128_20_100_0406_20260514_164053', img_root='/acpl-ssd10/Synapse-0325/results/base/imagenet100_mini', s_init='/acpl-ssd10/Synapse-0325/benchmarks/soft_target/results/base/base-i100-resnet152/initial_r152.pth.tar', t_model='/acpl-ssd10/Synapse-0325/benchmarks/soft_target/results/base/base-i100-vit-large/model_best.pth.tar', print_freq=50, epochs=1, batch_size=128, lr=0.1, momentum=0.9, weight_decay=0.0001, num_class=100, cuda=1, workers=4, max_steps_per_epoch=0, tspipe=True, seed=2, note='e2e_failover_batch128_20_100_0406_20260514_164053', data_name='imagenet100', t_name='vit_large', s_name='resnet152', kd_mode='st', lambda_kd=0.1, T=4.0, p=2.0, w_dist=25.0, w_angle=50.0, m=2.0, gamma=0.4, P_order=2, w_irg_vert=0.1, w_irg_edge=5.0, w_irg_tran=5.0, sf=1.0, init_var=5.0, att_f=1.0, dryrun_failover_cycle=False, failover_inject_scenario='', inject_slowdown_gpu=0, slowdown_mode='fixed', slowdown_factor=None, slowdown_fixed_ms=800.0, slowdown_duration=None, slowdown_start=198, slowdown_end=989, slowdown_warmup_sec=None, slowdown_duration_sec=None, slowdown_task_scope='compute')
+2026-05-14 16:40:56,350 - root - INFO - unparsed_args = ['--tspipe-config=benchmarks/soft_target/tspipe.yaml', '--ip=127.0.0.1', '--rank=0', '--num-nodes=1', '--tspipe-config=benchmarks/soft_target/tspipe.yaml']
+2026-05-14 16:40:56,350 - root - INFO - ✅ [Port Setup] Using launcher-provided NCCL port: 31200 (spacing=100, expected sequence: 31200, 31300, 31400...)
+2026-05-14 16:40:56,350 - root - INFO - ----------- Network Initialization --------------
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+2026-05-14 16:40:57,003 - root - INFO - Student param size = 58.348708MB, 58348708 params
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/functional.py:554: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /pytorch/aten/src/ATen/native/TensorShape.cpp:4322.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+2026-05-14 16:41:00,587 - root - INFO - Teacher param size = 303.404132MB, 303404132 params
+2026-05-14 16:41:00,587 - root - INFO - -----------------------------------------------
+Experiment dir : ./results/e2e_failover_batch128_20_100_0406_20260514_164053
+2026-05-14 16:41:03,088 - planner.mathematical_optimizer - INFO - ✅ Mathematical model components loaded successfully (relative import)
+2026-05-14 16:41:03,641 - planner.mathematical_optimizer - INFO - ✅ Mathematical model components loaded successfully (relative import)
+2026-05-14 16:41:04,120 - planner.mathematical_optimizer - INFO - ✅ Mathematical model components loaded successfully (relative import)
+2026-05-14 16:41:04,568 - planner.mathematical_optimizer - INFO - ✅ Mathematical model components loaded successfully (relative import)
+[Gloo] Rank 2 is connected to 4 peer ranks. Expected number of connected peer ranks is : 4
+[Gloo] Rank 0 is connected to 4 peer ranks. Expected number of connected peer ranks is : 4
+[Gloo] Rank 4 is connected to 4 peer ranks. Expected number of connected peer ranks is : 4
+[Gloo] Rank 3 is connected to 4 peer ranks. Expected number of connected peer ranks is : 4
+[Gloo] Rank 1 is connected to 4 peer ranks. Expected number of connected peer ranks is : 4
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:795: UserWarning: You are using a Backend <class 'torch.distributed.distributed_c10d.ProcessGroupGloo'> as a ProcessGroup. This usage is deprecated since PyTorch 2.0. Please use a public API of PyTorch Distributed instead.
+  warnings.warn(
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:795: UserWarning: You are using a Backend <class 'torch.distributed.distributed_c10d.ProcessGroupGloo'> as a ProcessGroup. This usage is deprecated since PyTorch 2.0. Please use a public API of PyTorch Distributed instead.
+  warnings.warn(
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:795: UserWarning: You are using a Backend <class 'torch.distributed.distributed_c10d.ProcessGroupGloo'> as a ProcessGroup. This usage is deprecated since PyTorch 2.0. Please use a public API of PyTorch Distributed instead.
+  warnings.warn(
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:795: UserWarning: You are using a Backend <class 'torch.distributed.distributed_c10d.ProcessGroupGloo'> as a ProcessGroup. This usage is deprecated since PyTorch 2.0. Please use a public API of PyTorch Distributed instead.
+  warnings.warn(
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:795: UserWarning: You are using a Backend <class 'torch.distributed.distributed_c10d.ProcessGroupGloo'> as a ProcessGroup. This usage is deprecated since PyTorch 2.0. Please use a public API of PyTorch Distributed instead.
+  warnings.warn(
+/acpl-ssd10/Synapse-0325/benchmarks/soft_target/tspipe/tspipe.py:386: UserWarning: Target train mode is disabled. Target network will be evaluated with eval mode.
+  warnings.warn("Target train mode is disabled. Target network will be evaluated with eval mode.")
+2026-05-14 16:41:06,117 - tspipe.slowdown_detector.SlowdownDetector - INFO - ✅ SlowdownDetector initialized
+2026-05-14 16:41:06,122 - planner.mathematical_optimizer.MathematicalFailoverOptimizer - INFO - 📊 Initialized ratio-only GPU coefficients: alpha_g=1.0, beta_g=1.0
+2026-05-14 16:41:06,122 - planner.progress_tracker.ProgressTracker - INFO - 📈 ProgressTracker initialized: 1 epochs x 6 steps = 6 total steps
+2026-05-14 16:41:06,124 - planner.stage_time_predictor.StageTimePredictor - INFO - 📊 StageTimePredictor initialized: SNet=57 layers, TNet=30 layers
+2026-05-14 16:41:06,124 - planner.stage_time_predictor.StageTimePredictor - INFO - ✅ Alpha-Beta initialized with ratio-only defaults (alpha=1.0, beta=1.0)
+2026-05-14 16:41:06,124 - planner.dynamic_policy_selector.DynamicPolicySelector - INFO - 🧪 Slowdown duration threshold overridden: 1000000000.0s
+2026-05-14 16:41:06,124 - planner.dynamic_policy_selector.DynamicPolicySelector - INFO - 🧠 DynamicPolicySelector initialized with mathematical model
+2026-05-14 16:41:06,124 - planner.mathematical_optimizer.MathematicalFailoverOptimizer - INFO - 🧠 Using mathematical ETA model for decisions
+2026-05-14 16:41:06,124 - planner.mathematical_optimizer.MathematicalFailoverOptimizer - INFO - 📌 Initialized current_partition from YAML: snet=[10, 14, 18, 15], tnet=[9, 7, 7, 7]
+2026-05-14 16:41:06,125 - planner.stage_time_predictor.StageTimePredictor - INFO - 📊 StageTimePredictor initialized: SNet=57 layers, TNet=30 layers
+2026-05-14 16:41:06,126 - planner.mathematical_optimizer.MathematicalFailoverOptimizer - INFO - 📈 Optimizer initialized: 57 SNet + 30 TNet layers
+2026-05-14 16:41:06,137 - planner.mathematical_optimizer.MathematicalFailoverOptimizer - INFO - ⚙️ Failover restart automation configured (enabled=True, restart_config=./results/e2e_failover_batch128_20_100_0406_20260514_164053/failover_restart_config.json)
+2026-05-14 16:41:06,137 - root - INFO - ✅ Failover monitoring components initialized
+2026-05-14 16:41:06,141 - root - INFO - Epoch: 1  lr: 0.100
+[10, 14, 18, 15]
+[9, 7, 7, 7]
+  0%|          | 0/6 [00:00<?, ?it/s] 17%|█▋        | 1/6 [00:01<00:05,  1.10s/it] 50%|█████     | 3/6 [00:01<00:00,  3.07it/s]/acpl-ssd10/Synapse-0325/benchmarks/soft_target/tspipe/utils.py:372: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  tensor = tensor.new_empty([0]).set_(tensor.storage())
+ 83%|████████▎ | 5/6 [00:01<00:00,  4.01it/s]100%|██████████| 6/6 [00:01<00:00,  3.45it/s]
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:4807: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:4807: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:4807: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/home/jiheechoi0102/miniconda3/envs/tspipe/lib/python3.9/site-packages/torch/distributed/distributed_c10d.py:4807: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+ewha-acpl6:1096894:1097052 [3] NCCL INFO cudaDriverVersion 13010
+ewha-acpl6:1096894:1097052 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+ewha-acpl6:1096894:1097052 [3] NCCL INFO Bootstrap: Using lo:127.0.0.1<0>
+ewha-acpl6:1096894:1097052 [3] NCCL INFO NCCL version 2.27.3+cuda12.9
+ewha-acpl6:1096894:1097052 [3] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096894:1097518 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+ewha-acpl6:1096894:1097518 [3] NCCL INFO NCCL_IB_DISABLE set by environment to 1.
+ewha-acpl6:1096894:1097518 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+ewha-acpl6:1096894:1097518 [3] NCCL INFO NET/Socket : Using [0]lo:127.0.0.1<0>
+ewha-acpl6:1096894:1097518 [3] NCCL INFO Initialized NET plugin Socket
+ewha-acpl6:1096894:1097518 [3] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096894:1097518 [3] NCCL INFO Using network Socket
+ewha-acpl6:1096894:1097518 [3] NCCL INFO ncclCommInitRankConfig comm 0x79d43002d770 rank 1 nranks 2 cudaDev 3 nvmlDev 3 busId 61000 commId 0x3975e78ec1aa6244 - Init START
+ewha-acpl6:1096894:1097518 [3] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+ewha-acpl6:1096894:1097518 [3] NCCL INFO Bootstrap timings total 0.000645 (create 0.000029, send 0.000121, recv 0.000219, ring 0.000032, delay 0.000000)
+ewha-acpl6:1096894:1097518 [3] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+ewha-acpl6:1096894:1097518 [3] NCCL INFO comm 0x79d43002d770 rank 1 nRanks 2 nNodes 1 localRanks 2 localRank 1 MNNVL 0
+ewha-acpl6:1096894:1097518 [3] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0
+ewha-acpl6:1096894:1097518 [3] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096894:1097518 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+ewha-acpl6:1096894:1097522 [3] NCCL INFO [Proxy Service] Device 3 CPU core 15
+ewha-acpl6:1096894:1097523 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 12
+ewha-acpl6:1096894:1097518 [3] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+ewha-acpl6:1096894:1097518 [3] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096894:1097518 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+ewha-acpl6:1096894:1097518 [3] NCCL INFO ncclCommInitRankConfig comm 0x79d43002d770 rank 1 nranks 2 cudaDev 3 nvmlDev 3 busId 61000 commId 0x3975e78ec1aa6244 - Init COMPLETE
+ewha-acpl6:1096894:1097518 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 2 total 0.12 (kernels 0.11, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096894:1097538 [3] NCCL INFO Channel 00 : 1[3] -> 0[2] via SHM/direct/direct
+ewha-acpl6:1096894:1097538 [3] NCCL INFO Channel 01 : 1[3] -> 0[2] via SHM/direct/direct
+ewha-acpl6:1096894:1096894 [3] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096894:1097806 [3] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096894:1097806 [3] NCCL INFO Using network Socket
+ewha-acpl6:1096894:1097806 [3] NCCL INFO ncclCommInitRankConfig comm 0x19a8fb50 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 61000 commId 0xb2986c0b83da421b - Init START
+ewha-acpl6:1096894:1097806 [3] NCCL INFO Bootstrap timings total 0.000845 (create 0.000035, send 0.000138, recv 0.000070, ring 0.000095, delay 0.000000)
+ewha-acpl6:1096894:1097806 [3] NCCL INFO NVLS multicast support is not available on dev 3 (NVLS_NCHANNELS 0)
+ewha-acpl6:1096894:1097806 [3] NCCL INFO comm 0x19a8fb50 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+ewha-acpl6:1096894:1097806 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2
+ewha-acpl6:1096894:1097806 [3] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096894:1097810 [3] NCCL INFO [Proxy Service] Device 3 CPU core 15
+ewha-acpl6:1096894:1097814 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 12
+ewha-acpl6:1096894:1097806 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+ewha-acpl6:1096894:1097806 [3] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096894:1097806 [3] NCCL INFO ncclCommInitRankConfig comm 0x19a8fb50 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId 61000 commId 0xb2986c0b83da421b - Init COMPLETE
+ewha-acpl6:1096894:1097806 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 4 total 0.02 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096894:1097815 [3] NCCL INFO Channel 00 : 3[3] -> 0[0] via SHM/direct/direct
+ewha-acpl6:1096894:1097815 [3] NCCL INFO Channel 01 : 3[3] -> 0[0] via SHM/direct/direct
+ewha-acpl6:1096894:1097815 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+ewha-acpl6:1096894:1096894 [3] NCCL INFO comm 0x19a8fb50 rank 3 nranks 4 cudaDev 3 busId 61000 - Destroy COMPLETE
+ewha-acpl6:1096894:1096894 [3] NCCL INFO comm 0x79d43002d770 rank 1 nranks 2 cudaDev 3 busId 61000 - Destroy COMPLETE
+[W514 16:42:35.017422296 socket.cpp:460] [c10d] waitForInput: poll for socket SocketImpl(fd=539, addr=[localhost]:48158, remote=[localhost]:31300) returned 0, likely a timeout
+[W514 16:42:35.017513999 socket.cpp:485] [c10d] waitForInput: socket SocketImpl(fd=539, addr=[localhost]:48158, remote=[localhost]:31300) timed out after 60000ms
+ewha-acpl6:1096880:1097025 [2] NCCL INFO cudaDriverVersion 13010
+ewha-acpl6:1096880:1097025 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+ewha-acpl6:1096880:1097025 [2] NCCL INFO Bootstrap: Using lo:127.0.0.1<0>
+ewha-acpl6:1096880:1097025 [2] NCCL INFO NCCL version 2.27.3+cuda12.9
+ewha-acpl6:1096880:1097025 [2] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096880:1097479 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+ewha-acpl6:1096880:1097479 [2] NCCL INFO NCCL_IB_DISABLE set by environment to 1.
+ewha-acpl6:1096880:1097479 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+ewha-acpl6:1096880:1097479 [2] NCCL INFO NET/Socket : Using [0]lo:127.0.0.1<0>
+ewha-acpl6:1096880:1097479 [2] NCCL INFO Initialized NET plugin Socket
+ewha-acpl6:1096880:1097479 [2] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096880:1097479 [2] NCCL INFO Using network Socket
+ewha-acpl6:1096880:1097479 [2] NCCL INFO ncclCommInitRankConfig comm 0x746ec402dd60 rank 1 nranks 2 cudaDev 2 nvmlDev 2 busId 41000 commId 0xda58fe46185eded - Init START
+ewha-acpl6:1096880:1097479 [2] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+ewha-acpl6:1096880:1097479 [2] NCCL INFO Bootstrap timings total 0.000625 (create 0.000028, send 0.000113, recv 0.000229, ring 0.000021, delay 0.000000)
+ewha-acpl6:1096880:1097479 [2] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+ewha-acpl6:1096880:1097479 [2] NCCL INFO comm 0x746ec402dd60 rank 1 nRanks 2 nNodes 1 localRanks 2 localRank 1 MNNVL 0
+ewha-acpl6:1096880:1097479 [2] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0
+ewha-acpl6:1096880:1097479 [2] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096880:1097479 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+ewha-acpl6:1096880:1097494 [2] NCCL INFO [Proxy Service] Device 2 CPU core 11
+ewha-acpl6:1096880:1097495 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 8
+ewha-acpl6:1096880:1097479 [2] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+ewha-acpl6:1096880:1097479 [2] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096880:1097479 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+ewha-acpl6:1096880:1097479 [2] NCCL INFO ncclCommInitRankConfig comm 0x746ec402dd60 rank 1 nranks 2 cudaDev 2 nvmlDev 2 busId 41000 commId 0xda58fe46185eded - Init COMPLETE
+ewha-acpl6:1096880:1097479 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 2 total 0.12 (kernels 0.11, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096880:1097024 [2] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096880:1097517 [2] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096880:1097517 [2] NCCL INFO Using network Socket
+ewha-acpl6:1096880:1097517 [2] NCCL INFO ncclCommInitRankConfig comm 0x746ed000fa30 rank 0 nranks 2 cudaDev 2 nvmlDev 2 busId 41000 commId 0x3975e78ec1aa6244 - Init START
+ewha-acpl6:1096880:1097517 [2] NCCL INFO Bootstrap timings total 0.116276 (create 0.000025, send 0.000103, recv 0.115795, ring 0.000159, delay 0.000000)
+ewha-acpl6:1096880:1097517 [2] NCCL INFO comm 0x746ed000fa30 rank 0 nRanks 2 nNodes 1 localRanks 2 localRank 0 MNNVL 0
+ewha-acpl6:1096880:1097517 [2] NCCL INFO Channel 00/02 : 0 1
+ewha-acpl6:1096880:1097517 [2] NCCL INFO Channel 01/02 : 0 1
+ewha-acpl6:1096880:1097517 [2] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1
+ewha-acpl6:1096880:1097517 [2] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096880:1097517 [2] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+ewha-acpl6:1096880:1097520 [2] NCCL INFO [Proxy Service] Device 2 CPU core 10
+ewha-acpl6:1096880:1097521 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 11
+ewha-acpl6:1096880:1097517 [2] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+ewha-acpl6:1096880:1097517 [2] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096880:1097517 [2] NCCL INFO CC Off, workFifoBytes 1048576
+ewha-acpl6:1096880:1097517 [2] NCCL INFO ncclCommInitRankConfig comm 0x746ed000fa30 rank 0 nranks 2 cudaDev 2 nvmlDev 2 busId 41000 commId 0x3975e78ec1aa6244 - Init COMPLETE
+ewha-acpl6:1096880:1097517 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 2 total 0.13 (kernels 0.00, alloc 0.00, bootstrap 0.12, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096880:1097524 [2] NCCL INFO Channel 00 : 0[2] -> 1[3] via SHM/direct/direct
+ewha-acpl6:1096880:1097524 [2] NCCL INFO Channel 01 : 0[2] -> 1[3] via SHM/direct/direct
+ewha-acpl6:1096880:1097544 [2] NCCL INFO Channel 00 : 1[2] -> 0[1] via SHM/direct/direct
+ewha-acpl6:1096880:1097544 [2] NCCL INFO Channel 01 : 1[2] -> 0[1] via SHM/direct/direct
+ewha-acpl6:1096880:1096880 [2] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096880:1097805 [2] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096880:1097805 [2] NCCL INFO Using network Socket
+ewha-acpl6:1096880:1097805 [2] NCCL INFO ncclCommInitRankConfig comm 0x4214a150 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId 41000 commId 0xb2986c0b83da421b - Init START
+ewha-acpl6:1096880:1097805 [2] NCCL INFO Bootstrap timings total 0.000589 (create 0.000036, send 0.000107, recv 0.000222, ring 0.000074, delay 0.000000)
+ewha-acpl6:1096880:1097805 [2] NCCL INFO NVLS multicast support is not available on dev 2 (NVLS_NCHANNELS 0)
+ewha-acpl6:1096880:1097805 [2] NCCL INFO comm 0x4214a150 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+ewha-acpl6:1096880:1097805 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1
+ewha-acpl6:1096880:1097805 [2] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096880:1097809 [2] NCCL INFO [Proxy Service] Device 2 CPU core 10
+ewha-acpl6:1096880:1097812 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 10
+ewha-acpl6:1096880:1097805 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+ewha-acpl6:1096880:1097805 [2] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096880:1097805 [2] NCCL INFO ncclCommInitRankConfig comm 0x4214a150 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId 41000 commId 0xb2986c0b83da421b - Init COMPLETE
+ewha-acpl6:1096880:1097805 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 4 total 0.02 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096880:1097817 [2] NCCL INFO Channel 00 : 2[2] -> 3[3] via SHM/direct/direct
+ewha-acpl6:1096880:1097817 [2] NCCL INFO Channel 01 : 2[2] -> 3[3] via SHM/direct/direct
+ewha-acpl6:1096880:1097817 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+ewha-acpl6:1096880:1096880 [2] NCCL INFO comm 0x4214a150 rank 2 nranks 4 cudaDev 2 busId 41000 - Destroy COMPLETE
+ewha-acpl6:1096880:1096880 [2] NCCL INFO comm 0x746ed000fa30 rank 0 nranks 2 cudaDev 2 busId 41000 - Destroy COMPLETE
+ewha-acpl6:1096880:1096880 [2] NCCL INFO comm 0x746ec402dd60 rank 1 nranks 2 cudaDev 2 busId 41000 - Destroy COMPLETE
+[W514 16:42:35.017745247 socket.cpp:460] [c10d] waitForInput: poll for socket SocketImpl(fd=538, addr=[localhost]:48142, remote=[localhost]:31300) returned 0, likely a timeout
+[W514 16:42:35.017842451 socket.cpp:485] [c10d] waitForInput: socket SocketImpl(fd=538, addr=[localhost]:48142, remote=[localhost]:31300) timed out after 60000ms
+ewha-acpl6:1096870:1096999 [1] NCCL INFO cudaDriverVersion 13010
+ewha-acpl6:1096870:1096999 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+ewha-acpl6:1096870:1096999 [1] NCCL INFO Bootstrap: Using lo:127.0.0.1<0>
+ewha-acpl6:1096870:1096999 [1] NCCL INFO NCCL version 2.27.3+cuda12.9
+ewha-acpl6:1096870:1096999 [1] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096870:1097421 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+ewha-acpl6:1096870:1097421 [1] NCCL INFO NCCL_IB_DISABLE set by environment to 1.
+ewha-acpl6:1096870:1097421 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+ewha-acpl6:1096870:1097421 [1] NCCL INFO NET/Socket : Using [0]lo:127.0.0.1<0>
+ewha-acpl6:1096870:1097421 [1] NCCL INFO Initialized NET plugin Socket
+ewha-acpl6:1096870:1097421 [1] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096870:1097421 [1] NCCL INFO Using network Socket
+ewha-acpl6:1096870:1097421 [1] NCCL INFO ncclCommInitRankConfig comm 0x7fd05802c5e0 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId 2b000 commId 0x473c2c101d2d4a0a - Init START
+ewha-acpl6:1096870:1097421 [1] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+ewha-acpl6:1096870:1097421 [1] NCCL INFO Bootstrap timings total 0.000653 (create 0.000029, send 0.000110, recv 0.000246, ring 0.000032, delay 0.000000)
+ewha-acpl6:1096870:1097421 [1] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+ewha-acpl6:1096870:1097421 [1] NCCL INFO comm 0x7fd05802c5e0 rank 1 nRanks 2 nNodes 1 localRanks 2 localRank 1 MNNVL 0
+ewha-acpl6:1096870:1097421 [1] NCCL INFO Trees [0] -1/-1/-1->1->0 [1] -1/-1/-1->1->0
+ewha-acpl6:1096870:1097421 [1] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096870:1097421 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+ewha-acpl6:1096870:1097457 [1] NCCL INFO [Proxy Service] Device 1 CPU core 6
+ewha-acpl6:1096870:1097459 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 6
+ewha-acpl6:1096870:1097421 [1] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+ewha-acpl6:1096870:1097421 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096870:1097421 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+ewha-acpl6:1096870:1097421 [1] NCCL INFO ncclCommInitRankConfig comm 0x7fd05802c5e0 rank 1 nranks 2 cudaDev 1 nvmlDev 1 busId 2b000 commId 0x473c2c101d2d4a0a - Init COMPLETE
+ewha-acpl6:1096870:1097421 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 2 total 0.12 (kernels 0.11, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096870:1096998 [1] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096870:1097478 [1] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096870:1097478 [1] NCCL INFO Using network Socket
+ewha-acpl6:1096870:1097478 [1] NCCL INFO ncclCommInitRankConfig comm 0x7fd05400fa30 rank 0 nranks 2 cudaDev 1 nvmlDev 1 busId 2b000 commId 0xda58fe46185eded - Init START
+ewha-acpl6:1096870:1097478 [1] NCCL INFO Bootstrap timings total 0.118067 (create 0.000029, send 0.000100, recv 0.117585, ring 0.000141, delay 0.000000)
+ewha-acpl6:1096870:1097478 [1] NCCL INFO comm 0x7fd05400fa30 rank 0 nRanks 2 nNodes 1 localRanks 2 localRank 0 MNNVL 0
+ewha-acpl6:1096870:1097478 [1] NCCL INFO Channel 00/02 : 0 1
+ewha-acpl6:1096870:1097478 [1] NCCL INFO Channel 01/02 : 0 1
+ewha-acpl6:1096870:1097478 [1] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1
+ewha-acpl6:1096870:1097478 [1] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096870:1097478 [1] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+ewha-acpl6:1096870:1097492 [1] NCCL INFO [Proxy Service] Device 1 CPU core 4
+ewha-acpl6:1096870:1097493 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 6
+ewha-acpl6:1096870:1097478 [1] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+ewha-acpl6:1096870:1097478 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096870:1097478 [1] NCCL INFO CC Off, workFifoBytes 1048576
+ewha-acpl6:1096870:1097478 [1] NCCL INFO ncclCommInitRankConfig comm 0x7fd05400fa30 rank 0 nranks 2 cudaDev 1 nvmlDev 1 busId 2b000 commId 0xda58fe46185eded - Init COMPLETE
+ewha-acpl6:1096870:1097478 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 2 total 0.13 (kernels 0.00, alloc 0.00, bootstrap 0.12, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096870:1097496 [1] NCCL INFO Channel 00 : 0[1] -> 1[2] via SHM/direct/direct
+ewha-acpl6:1096870:1097496 [1] NCCL INFO Channel 01 : 0[1] -> 1[2] via SHM/direct/direct
+ewha-acpl6:1096870:1097550 [1] NCCL INFO Channel 00 : 1[1] -> 0[0] via SHM/direct/direct
+ewha-acpl6:1096870:1097550 [1] NCCL INFO Channel 01 : 1[1] -> 0[0] via SHM/direct/direct
+ewha-acpl6:1096870:1096870 [1] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096870:1097804 [1] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096870:1097804 [1] NCCL INFO Using network Socket
+ewha-acpl6:1096870:1097804 [1] NCCL INFO ncclCommInitRankConfig comm 0x22c95460 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 2b000 commId 0xb2986c0b83da421b - Init START
+ewha-acpl6:1096870:1097804 [1] NCCL INFO Bootstrap timings total 0.000589 (create 0.000027, send 0.000108, recv 0.000145, ring 0.000154, delay 0.000000)
+ewha-acpl6:1096870:1097804 [1] NCCL INFO NVLS multicast support is not available on dev 1 (NVLS_NCHANNELS 0)
+ewha-acpl6:1096870:1097804 [1] NCCL INFO comm 0x22c95460 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+ewha-acpl6:1096870:1097804 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0
+ewha-acpl6:1096870:1097804 [1] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096870:1097808 [1] NCCL INFO [Proxy Service] Device 1 CPU core 7
+ewha-acpl6:1096870:1097811 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 5
+ewha-acpl6:1096870:1097804 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+ewha-acpl6:1096870:1097804 [1] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096870:1097804 [1] NCCL INFO ncclCommInitRankConfig comm 0x22c95460 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 2b000 commId 0xb2986c0b83da421b - Init COMPLETE
+ewha-acpl6:1096870:1097804 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 4 total 0.02 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096870:1097816 [1] NCCL INFO Channel 00 : 1[1] -> 2[2] via SHM/direct/direct
+ewha-acpl6:1096870:1097816 [1] NCCL INFO Channel 01 : 1[1] -> 2[2] via SHM/direct/direct
+ewha-acpl6:1096870:1097816 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+ewha-acpl6:1096870:1096870 [1] NCCL INFO comm 0x22c95460 rank 1 nranks 4 cudaDev 1 busId 2b000 - Destroy COMPLETE
+ewha-acpl6:1096870:1096870 [1] NCCL INFO comm 0x7fd05400fa30 rank 0 nranks 2 cudaDev 1 busId 2b000 - Destroy COMPLETE
+ewha-acpl6:1096870:1096870 [1] NCCL INFO comm 0x7fd05802c5e0 rank 1 nranks 2 cudaDev 1 busId 2b000 - Destroy COMPLETE
+[W514 16:42:35.018031629 socket.cpp:460] [c10d] waitForInput: poll for socket SocketImpl(fd=538, addr=[localhost]:48120, remote=[localhost]:31300) returned 0, likely a timeout
+[W514 16:42:35.018095870 socket.cpp:485] [c10d] waitForInput: socket SocketImpl(fd=538, addr=[localhost]:48120, remote=[localhost]:31300) timed out after 60000ms
+ewha-acpl6:1096858:1097055 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+ewha-acpl6:1096858:1097055 [0] NCCL INFO Bootstrap: Using lo:127.0.0.1<0>
+ewha-acpl6:1096858:1097055 [0] NCCL INFO cudaDriverVersion 13010
+ewha-acpl6:1096858:1097055 [0] NCCL INFO NCCL version 2.27.3+cuda12.9
+ewha-acpl6:1096858:1097055 [0] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096858:1097420 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+ewha-acpl6:1096858:1097420 [0] NCCL INFO NCCL_IB_DISABLE set by environment to 1.
+ewha-acpl6:1096858:1097420 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to lo
+ewha-acpl6:1096858:1097420 [0] NCCL INFO NET/Socket : Using [0]lo:127.0.0.1<0>
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Initialized NET plugin Socket
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Using network Socket
+ewha-acpl6:1096858:1097420 [0] NCCL INFO ncclCommInitRankConfig comm 0x7afbe40295d0 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 1000 commId 0x473c2c101d2d4a0a - Init START
+ewha-acpl6:1096858:1097420 [0] NCCL INFO RAS client listening socket at 127.0.0.1<28028>
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Bootstrap timings total 0.000663 (create 0.000029, send 0.000107, recv 0.000156, ring 0.000039, delay 0.000000)
+ewha-acpl6:1096858:1097420 [0] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+ewha-acpl6:1096858:1097420 [0] NCCL INFO comm 0x7afbe40295d0 rank 0 nRanks 2 nNodes 1 localRanks 2 localRank 0 MNNVL 0
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Channel 00/02 : 0 1
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Channel 01/02 : 0 1
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1
+ewha-acpl6:1096858:1097420 [0] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096858:1097420 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+ewha-acpl6:1096858:1097458 [0] NCCL INFO [Proxy Service] Device 0 CPU core 2
+ewha-acpl6:1096858:1097460 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 0
+ewha-acpl6:1096858:1097420 [0] NCCL INFO threadThresholds 8/8/64 | 16/8/64 | 512 | 512
+ewha-acpl6:1096858:1097420 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096858:1097420 [0] NCCL INFO CC Off, workFifoBytes 1048576
+ewha-acpl6:1096858:1097420 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+ewha-acpl6:1096858:1097420 [0] NCCL INFO ncclCommInitRankConfig comm 0x7afbe40295d0 rank 0 nranks 2 cudaDev 0 nvmlDev 0 busId 1000 commId 0x473c2c101d2d4a0a - Init COMPLETE
+ewha-acpl6:1096858:1097420 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 2 total 0.12 (kernels 0.11, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096858:1097461 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct/direct
+ewha-acpl6:1096858:1097461 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct/direct
+ewha-acpl6:1096858:1096858 [0] NCCL INFO Comm config Blocking set to 1
+ewha-acpl6:1096858:1097803 [0] NCCL INFO Assigned NET plugin Socket to comm
+ewha-acpl6:1096858:1097803 [0] NCCL INFO Using network Socket
+ewha-acpl6:1096858:1097803 [0] NCCL INFO ncclCommInitRankConfig comm 0x20b87240 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 1000 commId 0xb2986c0b83da421b - Init START
+ewha-acpl6:1096858:1097803 [0] NCCL INFO Bootstrap timings total 0.001076 (create 0.000027, send 0.000115, recv 0.000537, ring 0.000253, delay 0.000000)
+ewha-acpl6:1096858:1097803 [0] NCCL INFO NVLS multicast support is not available on dev 0 (NVLS_NCHANNELS 0)
+ewha-acpl6:1096858:1097803 [0] NCCL INFO comm 0x20b87240 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+ewha-acpl6:1096858:1097803 [0] NCCL INFO Channel 00/02 : 0 1 2 3
+ewha-acpl6:1096858:1097803 [0] NCCL INFO Channel 01/02 : 0 1 2 3
+ewha-acpl6:1096858:1097803 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1
+ewha-acpl6:1096858:1097803 [0] NCCL INFO P2P Chunksize set to 131072
+ewha-acpl6:1096858:1097803 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+ewha-acpl6:1096858:1097807 [0] NCCL INFO [Proxy Service] Device 0 CPU core 0
+ewha-acpl6:1096858:1097813 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 2
+ewha-acpl6:1096858:1097803 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+ewha-acpl6:1096858:1097803 [0] NCCL INFO 2 coll channels, 2 collnet channels, 0 nvls channels, 2 p2p channels, 2 p2p channels per peer
+ewha-acpl6:1096858:1097803 [0] NCCL INFO CC Off, workFifoBytes 1048576
+ewha-acpl6:1096858:1097803 [0] NCCL INFO ncclCommInitRankConfig comm 0x20b87240 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 1000 commId 0xb2986c0b83da421b - Init COMPLETE
+ewha-acpl6:1096858:1097803 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 4 total 0.02 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.01, graphs 0.00, connections 0.00, rest 0.00)
+ewha-acpl6:1096858:1097818 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct/direct
+ewha-acpl6:1096858:1097818 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct/direct
+ewha-acpl6:1096858:1097818 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+ewha-acpl6:1096858:1096858 [0] NCCL INFO comm 0x20b87240 rank 0 nranks 4 cudaDev 0 busId 1000 - Destroy COMPLETE
+ewha-acpl6:1096858:1096858 [0] NCCL INFO comm 0x7afbe40295d0 rank 0 nranks 2 cudaDev 0 busId 1000 - Destroy COMPLETE
+[W514 16:42:35.018313893 socket.cpp:460] [c10d] waitForInput: poll for socket SocketImpl(fd=573, addr=[localhost]:48106, remote=[localhost]:31300) returned 0, likely a timeout
+[W514 16:42:35.018409824 socket.cpp:485] [c10d] waitForInput: socket SocketImpl(fd=573, addr=[localhost]:48106, remote=[localhost]:31300) timed out after 60000ms
+[W514 16:42:35.022275858 tensorpipe_agent.cpp:719] RPC agent for node4 encountered error when reading incoming request from node3: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+[W514 16:42:35.022317497 tensorpipe_agent.cpp:719] RPC agent for node1 encountered error when reading incoming request from node2: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022325081 tensorpipe_agent.cpp:719] RPC agent for node2 encountered error when reading incoming request from node1: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022335431 tensorpipe_agent.cpp:719] RPC agent for node3 encountered error when reading incoming request from node2: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022346662 tensorpipe_agent.cpp:719] RPC agent for node1 encountered error when reading incoming request from node4: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022341422 tensorpipe_agent.cpp:719] RPC agent for node0 encountered error when reading incoming request from node3: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022352082 tensorpipe_agent.cpp:719] RPC agent for node3 encountered error when reading incoming request from node4: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022369515 tensorpipe_agent.cpp:719] RPC agent for node2 encountered error when reading incoming request from node4: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022391797 tensorpipe_agent.cpp:719] RPC agent for node3 encountered error when reading incoming request from node0: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022391537 tensorpipe_agent.cpp:719] RPC agent for node1 encountered error when reading incoming request from node0: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022422966 tensorpipe_agent.cpp:719] RPC agent for node0 encountered error when reading incoming request from node4: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022446511 tensorpipe_agent.cpp:719] RPC agent for node2 encountered error when reading incoming request from node3: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022478131 tensorpipe_agent.cpp:719] RPC agent for node0 encountered error when reading incoming request from node1: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022517184 tensorpipe_agent.cpp:719] RPC agent for node2 encountered error when reading incoming request from node0: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.022530480 tensorpipe_agent.cpp:719] RPC agent for node0 encountered error when reading incoming request from node2: pipe closed (this error originated at tensorpipe/core/pipe_impl.cc:356)
+[W514 16:42:35.023215315 tensorpipe_agent.cpp:719] RPC agent for node4 encountered error when reading incoming request from node2: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+[W514 16:42:35.023293072 tensorpipe_agent.cpp:719] RPC agent for node4 encountered error when reading incoming request from node0: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+[W514 16:42:35.023397480 tensorpipe_agent.cpp:719] RPC agent for node4 encountered error when reading incoming request from node1: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+Experiment dir : ./results/e2e_failover_batch128_20_100_0406_20260514_164053
+Communicator is NCCL eligible: device=cuda:0, rank=0, num_partition=4
+======= GPipe Emulation Mode Enabled ========
+[Profiler] Logging to gpu_task_summary_partition0.txt
+[copy_cpu] Received None task. Terminating thread.
+[LOG] compute_worker_loop received TERMINATE
+Cleaning up...
+[copy_grad_out] Received None task. Terminating thread.
+[copy_model_online] Received None task. Terminating thread.
+[copy_model_target] Received None task. Terminating thread.
+[copy_batch_out] Received None task. Terminating thread.
+[copy_batch] Received None task. Terminating thread.
+[compute] Received None task. Terminating thread.
+worker_compute Thread Join OK
+worker_copy_batch Thread Join OK
+worker_copy_batch_out Thread Join OK
+worker_copy_grad_out Thread Join OK
+worker_copy_model_online Thread Join OK
+worker_copy_model_target Thread Join OK
+worker_copy_cpu Thread Join OK
+[Rank 0] Finish call
+Stopping thread _thread_receiver_nccl
+Stopping thread _thread_sender_nccl
+[Rank 0] NCCL threads joined.
+[Rank 0] Entering NCCL barrier
+[Rank 0] Leaving NCCL barrier
+[Rank 0] Destroying process group...
+[Rank 0] Finish OK
+Terminating PrefetchWorker at  <Thread(Thread-4, started 135222507054784)>
+PrefetchWorker terminated.
+[Profiler] Profiling summary saved to results/e2e_failover_batch128_20_100_0406_20260514_164053/profiling_logs/gpu_task_summary_partition0.txt
+Experiment dir : ./results/e2e_failover_batch128_20_100_0406_20260514_164053
+Communicator is NCCL eligible: device=cuda:1, rank=1, num_partition=4
+======= GPipe Emulation Mode Enabled ========
+[Profiler] Logging to gpu_task_summary_partition1.txt
+[copy_cpu] Received None task. Terminating thread.
+[LOG] compute_worker_loop received TERMINATE
+Cleaning up...
+[copy_model_online] Received None task. Terminating thread.
+[copy_model_target] Received None task. Terminating thread.
+[copy_batch_out] Received None task. Terminating thread.
+[copy_batch] Received None task. Terminating thread.
+[copy_grad_out] Received None task. Terminating thread.
+[compute] Received None task. Terminating thread.
+worker_compute Thread Join OK
+worker_copy_batch Thread Join OK
+worker_copy_batch_out Thread Join OK
+worker_copy_grad_out Thread Join OK
+worker_copy_model_online Thread Join OK
+worker_copy_model_target Thread Join OK
+worker_copy_cpu Thread Join OK
+[Rank 1] Finish call
+Stopping thread _thread_sender_nccl
+Stopping thread _thread_receiver_nccl
+Stopping thread _thread_sender_nccl
+Stopping thread _thread_receiver_nccl
+[Rank 1] NCCL threads joined.
+[Rank 1] Entering NCCL barrier
+[Rank 1] Leaving NCCL barrier
+[Rank 1] Destroying process group...
+[Rank 1] Finish OK
+Terminating PrefetchWorker at  <Thread(Thread-6, started 140532604991168)>
+PrefetchWorker terminated.
+[Profiler] Profiling summary saved to results/e2e_failover_batch128_20_100_0406_20260514_164053/profiling_logs/gpu_task_summary_partition1.txt
+Experiment dir : ./results/e2e_failover_batch128_20_100_0406_20260514_164053
+Communicator is NCCL eligible: device=cuda:2, rank=2, num_partition=4
+======= GPipe Emulation Mode Enabled ========
+[Profiler] Logging to gpu_task_summary_partition2.txt
+[copy_cpu] Received None task. Terminating thread.
+[LOG] compute_worker_loop received TERMINATE
+Cleaning up...
+[copy_model_online] Received None task. Terminating thread.
+[copy_model_target] Received None task. Terminating thread.
+[copy_batch_out] Received None task. Terminating thread.
+[copy_batch] Received None task. Terminating thread.
+[copy_grad_out] Received None task. Terminating thread.
+[compute] Received None task. Terminating thread.
+worker_compute Thread Join OK
+worker_copy_batch Thread Join OK
+worker_copy_batch_out Thread Join OK
+worker_copy_grad_out Thread Join OK
+worker_copy_model_online Thread Join OK
+worker_copy_model_target Thread Join OK
+worker_copy_cpu Thread Join OK
+[Rank 2] Finish call
+Stopping thread _thread_sender_nccl
+Stopping thread _thread_receiver_nccl
+Stopping thread _thread_sender_nccl
+Stopping thread _thread_receiver_nccl
+[Rank 2] NCCL threads joined.
+[Rank 2] Entering NCCL barrier
+[Rank 2] Leaving NCCL barrier
+[Rank 2] Destroying process group...
+[Rank 2] Finish OK
+Terminating PrefetchWorker at  <Thread(Thread-6, started 128019192596160)>
+PrefetchWorker terminated.
+[Profiler] Profiling summary saved to results/e2e_failover_batch128_20_100_0406_20260514_164053/profiling_logs/gpu_task_summary_partition2.txt
+Experiment dir : ./results/e2e_failover_batch128_20_100_0406_20260514_164053
+Communicator is NCCL eligible: device=cuda:3, rank=3, num_partition=4
+======= GPipe Emulation Mode Enabled ========
+[Profiler] Logging to gpu_task_summary_partition3.txt
+[copy_cpu] Received None task. Terminating thread.
+[copy_batch_out] Received None task. Terminating thread.
+[LOG] compute_worker_loop received TERMINATE
+Cleaning up...
+[copy_model_online] Received None task. Terminating thread.
+[copy_model_target] Received None task. Terminating thread.
+[copy_batch] Received None task. Terminating thread.
+[copy_grad_out] Received None task. Terminating thread.
+[compute] Received None task. Terminating thread.
+worker_compute Thread Join OK
+worker_copy_batch Thread Join OK
+worker_copy_batch_out Thread Join OK
+worker_copy_grad_out Thread Join OK
+worker_copy_model_online Thread Join OK
+worker_copy_model_target Thread Join OK
+worker_copy_cpu Thread Join OK
+[Rank 3] Finish call
+Stopping thread _thread_receiver_nccl
+Stopping thread _thread_sender_nccl
+[Rank 3] NCCL threads joined.
+[Rank 3] Entering NCCL barrier
+[Rank 3] Leaving NCCL barrier
+[Rank 3] Destroying process group...
+[Rank 3] Finish OK
+Terminating PrefetchWorker at  <Thread(Thread-4, started 133952413087424)>
+PrefetchWorker terminated.
+Terminating PrefetchWorker at  <Thread(Thread-5, started 133953353307840)>
+PrefetchWorker terminated.
+[Profiler] Profiling summary saved to results/e2e_failover_batch128_20_100_0406_20260514_164053/profiling_logs/gpu_task_summary_partition3.txt
+[W514 16:42:42.143438026 tensorpipe_agent.cpp:913] RPC agent for node4 encountered error when sending outgoing request #309 to node0: eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+E0514 16:42:42.928519 1096673 site-packages/torch/distributed/rpc/api.py:314] Failed to respond to 'Shutdown Proceed' in time, got error eof (this error originated at tensorpipe/transport/shm/connection_impl.cc:259)
+[LOG] batch_q.stop() called
+[LOG] batch_q.stop(): Notifying all waiting threads
+[cmpt] Received None task. Terminating thread.
+[SCHEDULER] Termination signal is sent to all partitions. Stopping scheduler loop.
+[SCHEDULER] Scheduler thread exiting.
+Stopping LocalWorker
+Waiting for LocalWorker join
+Terminating thread CPU0CpybThread
+[DEBUG] CPU0CmptThread alive: False
+[DEBUG] CPU0CpybThread alive: False
+LocalWorker stopped.
+[Rank 4] Finish call
+[Rank 4] NCCL threads joined.
+[Rank 4] Finish OK
+[E2E] train_kd.py exited with code 0
+[E2E] Training completed normally. Exiting launcher.
+[E2E] Run note: e2e_failover_batch128_20_100_0406_20260514_164053
+[E2E] Run dir: ./results/e2e_failover_batch128_20_100_0406_20260514_164053
+[E2E] Status: COMPLETED
+[E2E] Exit code: 0
+[E2E] Restart count: 0
+[E2E] Start time: 2026-05-14 16:40:54
+[E2E] End time:   2026-05-14 16:42:54
+[E2E] Total wall-clock time: 120s (2m 0s)

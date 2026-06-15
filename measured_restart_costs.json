@@ -1,0 +1,12 @@
+{
+  "C_load": 0.24667768478393554,
+  "D_replan": 0.7009684244791666,
+  "D_degrade": 0.6508850256601969,
+  "R_replan": 1.0,
+  "R_degrade": 1.0,
+  "T_base": 1.0,
+  "T_opt_K": 0.1,
+  "T_opt_K_minus_1": 0.15,
+  "measurement_timestamp": 1775483919.80358,
+  "measurement_date": "2026-04-06 13:58:39"
+}

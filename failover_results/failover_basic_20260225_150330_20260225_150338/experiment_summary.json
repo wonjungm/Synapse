@@ -1,0 +1,49 @@
+{
+  "experiment_info": {
+    "name": "failover_basic_20260225_150330",
+    "id": "failover_basic_20260225_150330_20260225_150338",
+    "duration_seconds": 40.417317,
+    "start_time": "2026-02-25T15:03:38.854673",
+    "end_time": "2026-02-25T15:04:19.272132"
+  },
+  "failover_statistics": {
+    "total_failures": 1,
+    "total_recoveries": 0,
+    "avg_recovery_time_ms": 0.0,
+    "failure_gpu_ids": [
+      2
+    ]
+  },
+  "performance_statistics": {
+    "total_metrics_collected": 36,
+    "avg_cpu_usage_percent": 25.699999999999996,
+    "gpu_utilization_summary": {
+      "0": {
+        "avg_utilization": 46.30555555555556,
+        "max_utilization": 47,
+        "min_utilization": 45
+      },
+      "1": {
+        "avg_utilization": 51.166666666666664,
+        "max_utilization": 55,
+        "min_utilization": 50
+      },
+      "2": {
+        "avg_utilization": 0.0,
+        "max_utilization": 0,
+        "min_utilization": 0
+      },
+      "3": {
+        "avg_utilization": 78.05555555555556,
+        "max_utilization": 100,
+        "min_utilization": 19
+      }
+    }
+  },
+  "file_locations": {
+    "main_log": "./failover_results/failover_basic_20260225_150330_20260225_150338/experiment.log",
+    "performance_data": "./failover_results/failover_basic_20260225_150330_20260225_150338/performance.jsonl",
+    "failover_events": "./failover_results/failover_basic_20260225_150330_20260225_150338/failover_events.jsonl",
+    "plots_directory": "./failover_results/failover_basic_20260225_150330_20260225_150338/plots"
+  }
+}

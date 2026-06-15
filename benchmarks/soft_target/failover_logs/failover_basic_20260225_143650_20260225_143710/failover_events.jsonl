@@ -1,0 +1,2 @@
+{"timestamp": "2026-02-25T14:37:20.718792", "event_type": "gpu_failure", "gpu_id": 2, "partition_id": null, "old_config": null, "new_config": null, "recovery_time_ms": null, "details": {"failure_type": "simulated_failure", "timestamp": "2026-02-25T14:37:20.718486", "error_msg": "GPU health check failed or simulated failure"}}
+{"timestamp": "2026-02-25T14:37:25.234554", "event_type": "gpu_failure", "gpu_id": 0, "partition_id": 0, "old_config": null, "new_config": null, "recovery_time_ms": null, "details": {"failure_reason": "process_died", "source": "process_health_monitor"}}

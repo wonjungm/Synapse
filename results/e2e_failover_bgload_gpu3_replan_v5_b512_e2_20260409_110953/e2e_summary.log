@@ -1,0 +1,8 @@
+[E2E] Run note: e2e_failover_bgload_gpu3_replan_v5_b512_e2_20260409_110953
+[E2E] Run dir: ./results/e2e_failover_bgload_gpu3_replan_v5_b512_e2_20260409_110953
+[E2E] Status: COMPLETED
+[E2E] Exit code: 0
+[E2E] Restart count: 1
+[E2E] Start time: 2026-04-09 11:09:54
+[E2E] End time:   2026-04-09 12:15:14
+[E2E] Total wall-clock time: 3920s (65m 20s)

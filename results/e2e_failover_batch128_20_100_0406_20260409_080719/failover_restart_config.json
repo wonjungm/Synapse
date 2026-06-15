@@ -1,0 +1,195 @@
+{
+  "timestamp": 1775725853.8986762,
+  "trigger_policy": "DEGRADE",
+  "step_id": 880,
+  "partition": {
+    "gpu_assignment": [
+      1,
+      2,
+      3
+    ],
+    "snet_partition": [
+      17,
+      10,
+      30
+    ],
+    "tnet_partition": [
+      13,
+      4,
+      13
+    ],
+    "snet_stage_boundaries": [
+      [
+        0,
+        17
+      ],
+      [
+        17,
+        27
+      ],
+      [
+        27,
+        57
+      ]
+    ],
+    "tnet_stage_boundaries": [
+      [
+        0,
+        13
+      ],
+      [
+        13,
+        17
+      ],
+      [
+        17,
+        30
+      ]
+    ]
+  },
+  "alpha_comp": {
+    "1": 0.9538867178638825,
+    "2": 2.2601674268576764,
+    "3": 0.8850960897695717
+  },
+  "beta_comm": {
+    "1": 0.8345122410105297,
+    "2": 1.2439239256288093,
+    "3": 1.2515862199617485
+  },
+  "restart_overhead": {
+    "formula": "C_load + D_replan + R_replan * T_base",
+    "t_base": 0.16934117078781127,
+    "value": 26.837058539390565
+  },
+  "partition_transition": {
+    "policy": "DEGRADE",
+    "previous_partition": {
+      "gpu_assignment": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "snet_partition": [
+        4,
+        9,
+        19,
+        25
+      ],
+      "tnet_partition": [
+        4,
+        7,
+        8,
+        11
+      ],
+      "snet_stage_boundaries": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          13,
+          32
+        ],
+        [
+          32,
+          57
+        ]
+      ],
+      "tnet_stage_boundaries": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          11,
+          19
+        ],
+        [
+          19,
+          30
+        ]
+      ]
+    },
+    "previous_nominal_step_time": 0.3509069127365947,
+    "new_nominal_step_time": 0.4351344225530823
+  },
+  "slowdown_detector_state": {
+    "baseline_stage_time_ms": 2309.1050573126845,
+    "baseline_std_ms": 5.6906104650584,
+    "baseline_skip_steps": 20,
+    "batch_count": 883,
+    "last_global_step": 880,
+    "stage_times_ms": [
+      4988.9984130859375,
+      5324.400901794434,
+      5084.465265274048,
+      5471.567869186401,
+      5992.212295532227,
+      5364.7871017456055,
+      5388.535261154175,
+      5369.213104248047,
+      6030.267715454102,
+      5459.703683853149
+    ],
+    "baseline_candidate_times_ms": [],
+    "wallclock_sustained_duration_sec": 3293.590600967407,
+    "slowdown_detected_at_step": 217,
+    "slowdown_detected_at_global_step": 214
+  },
+  "optimizer_runtime_state": {
+    "baseline_warmup_steps": 50,
+    "baseline_frozen": true,
+    "baseline_count_compute": {
+      "0": 50,
+      "1": 50,
+      "2": 50,
+      "3": 50
+    },
+    "baseline_count_comm": {
+      "0": 50,
+      "1": 50,
+      "2": 50,
+      "3": 50
+    },
+    "baseline_compute_time": {
+      "0": 0.16511146783828734,
+      "1": 0.06857980251312255,
+      "2": 0.07986277580261229,
+      "3": 0.07900336503982541
+    },
+    "baseline_comm_time": {
+      "0": 0.004229702949523927,
+      "1": 0.0029734683036804197,
+      "2": 0.0020231318473815925,
+      "3": 0.0016578221321105957
+    },
+    "latest_compute_time": {
+      "0": 0.8326334953308105,
+      "1": 0.06547272205352783,
+      "2": 0.15348327159881592,
+      "3": 0.06931698322296143
+    },
+    "latest_comm_time": {
+      "0": 0.0017914772033691406,
+      "1": 0.002415895462036133,
+      "2": 0.0023986101150512695,
+      "3": 0.0018661022186279297
+    },
+    "suspect_gpu_id": 0,
+    "suspect_switch_counter": 0,
+    "progress_step": 880,
+    "progress_epoch": 1
+  },
+  "post_restart_observation_steps": 10,
+  "checkpoint_path": "./results/e2e_failover_batch128_20_100_0406_20260409_080719/failover_checkpoint_latest.pth"
+}
