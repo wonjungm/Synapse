@@ -1,0 +1,206 @@
+{
+  "timestamp": 1775715309.868088,
+  "trigger_policy": "DEGRADE",
+  "step_id": 200,
+  "partition": {
+    "gpu_assignment": [
+      1,
+      2,
+      3
+    ],
+    "snet_partition": [
+      15,
+      18,
+      24
+    ],
+    "tnet_partition": [
+      11,
+      8,
+      11
+    ],
+    "snet_stage_boundaries": [
+      [
+        0,
+        15
+      ],
+      [
+        15,
+        33
+      ],
+      [
+        33,
+        57
+      ]
+    ],
+    "tnet_stage_boundaries": [
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        19
+      ],
+      [
+        19,
+        30
+      ]
+    ]
+  },
+  "alpha_comp": {
+    "1": 0.8000000000000003,
+    "2": 0.8000000000000003,
+    "3": 0.8000000000000003
+  },
+  "beta_comm": {
+    "1": 1.1830582720216318,
+    "2": 1.2623469171882882,
+    "3": 1.2638798504148454
+  },
+  "restart_overhead": {
+    "formula": "C_load + D_replan + R_replan * T_base",
+    "t_base": 0.16885423183441164,
+    "value": 26.812711591720586
+  },
+  "partition_transition": {
+    "policy": "DEGRADE",
+    "previous_partition": {
+      "gpu_assignment": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "snet_partition": [
+        10,
+        11,
+        16,
+        20
+      ],
+      "tnet_partition": [
+        9,
+        6,
+        6,
+        9
+      ],
+      "snet_stage_boundaries": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          21,
+          37
+        ],
+        [
+          37,
+          57
+        ]
+      ],
+      "tnet_stage_boundaries": [
+        [
+          0,
+          9
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          15,
+          21
+        ],
+        [
+          21,
+          30
+        ]
+      ]
+    },
+    "previous_nominal_step_time": 0.26684714801236986,
+    "new_nominal_step_time": 0.3512678194753826
+  },
+  "slowdown_detector_state": {
+    "baseline_stage_time_ms": 1763.4351253509521,
+    "baseline_std_ms": 12.522772782061349,
+    "baseline_skip_steps": 20,
+    "batch_count": 201,
+    "last_global_step": 200,
+    "stage_times_ms": [
+      1782.0026874542236,
+      1775.4600048065186,
+      1802.0915985107422,
+      1824.7857093811035,
+      1769.322395324707,
+      1797.853946685791,
+      1784.3449115753174,
+      3365.2827739715576,
+      5281.744480133057,
+      4936.606645584106
+    ],
+    "baseline_candidate_times_ms": [
+      1747.023582458496,
+      1783.595085144043,
+      1762.9399299621582,
+      1747.8668689727783,
+      1763.930320739746,
+      1756.0360431671143,
+      1774.3854522705078,
+      1768.5062885284424,
+      1756.068229675293,
+      1783.5354804992676
+    ],
+    "wallclock_sustained_duration_sec": 10.225403547286987,
+    "slowdown_detected_at_step": 199,
+    "slowdown_detected_at_global_step": 198
+  },
+  "optimizer_runtime_state": {
+    "baseline_warmup_steps": 50,
+    "baseline_frozen": true,
+    "baseline_count_compute": {
+      "0": 50,
+      "1": 50,
+      "2": 50,
+      "3": 50
+    },
+    "baseline_count_comm": {
+      "0": 50,
+      "1": 50,
+      "2": 50,
+      "3": 50
+    },
+    "baseline_compute_time": {
+      "0": 0.16375691413879398,
+      "1": 0.06689516305923464,
+      "2": 0.07880978107452392,
+      "3": 0.07642881393432617
+    },
+    "baseline_comm_time": {
+      "0": 0.005097317695617675,
+      "1": 0.0026248455047607412,
+      "2": 0.0018501520156860352,
+      "3": 0.0018113541603088379
+    },
+    "latest_compute_time": {
+      "0": 0.85721755027771,
+      "1": 0.046935439109802246,
+      "2": 0.0514833927154541,
+      "3": 0.05281829833984375
+    },
+    "latest_comm_time": {
+      "0": 0.0016937255859375,
+      "1": 0.002886533737182617,
+      "2": 0.0030649900436401367,
+      "3": 0.0027208328247070312
+    },
+    "suspect_gpu_id": 0,
+    "suspect_switch_counter": 0,
+    "progress_step": 200,
+    "progress_epoch": 1
+  },
+  "post_restart_observation_steps": 10,
+  "checkpoint_path": "./results/e2e_failover_batch128_20_100_0406_20260409_060839/failover_checkpoint_latest.pth"
+}

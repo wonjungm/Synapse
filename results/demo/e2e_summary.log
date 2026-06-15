@@ -1,0 +1,8 @@
+[E2E] Run note: demo_batch64
+[E2E] Run dir: ./results/demo_batch64
+[E2E] Status: INTERRUPTED_INT
+[E2E] Exit code: 130
+[E2E] Restart count: 7
+[E2E] Start time: 2026-05-15 16:24:08
+[E2E] End time:   2026-05-15 17:02:27
+[E2E] Total wall-clock time: 2299s (38m 19s)

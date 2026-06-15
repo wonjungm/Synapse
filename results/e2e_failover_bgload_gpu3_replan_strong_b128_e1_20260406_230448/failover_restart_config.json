@@ -1,0 +1,206 @@
+{
+  "timestamp": 1775516871.7145844,
+  "trigger_policy": "REPLAN",
+  "step_id": 80,
+  "partition": {
+    "gpu_assignment": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "snet_partition": [
+      10,
+      14,
+      19,
+      14
+    ],
+    "tnet_partition": [
+      9,
+      7,
+      7,
+      7
+    ],
+    "snet_stage_boundaries": [
+      [
+        0,
+        10
+      ],
+      [
+        10,
+        24
+      ],
+      [
+        24,
+        43
+      ],
+      [
+        43,
+        57
+      ]
+    ],
+    "tnet_stage_boundaries": [
+      [
+        0,
+        9
+      ],
+      [
+        9,
+        16
+      ],
+      [
+        16,
+        23
+      ],
+      [
+        23,
+        30
+      ]
+    ]
+  },
+  "alpha_comp": {
+    "0": 0.9766760252186635,
+    "1": 0.8000000265288705,
+    "2": 0.8000000265288705,
+    "3": 1.378143885592136
+  },
+  "beta_comm": {
+    "0": 0.8506791075735676,
+    "1": 0.9171491157730333,
+    "2": 1.1959211360597166,
+    "3": 0.8678321604766587
+  },
+  "restart_overhead": {
+    "formula": "C_load + D_replan + R_replan * T_base",
+    "t_base": 0.1664572405815125,
+    "value": 26.692862029075627
+  },
+  "partition_transition": {
+    "policy": "REPLAN",
+    "previous_partition": {
+      "gpu_assignment": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "snet_partition": [
+        10,
+        11,
+        16,
+        20
+      ],
+      "tnet_partition": [
+        9,
+        6,
+        6,
+        9
+      ],
+      "snet_stage_boundaries": [
+        [
+          0,
+          10
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          21,
+          37
+        ],
+        [
+          37,
+          57
+        ]
+      ],
+      "tnet_stage_boundaries": [
+        [
+          0,
+          9
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          15,
+          21
+        ],
+        [
+          21,
+          30
+        ]
+      ]
+    },
+    "previous_nominal_step_time": 0.2662790732358893,
+    "new_nominal_step_time": 0.30730702749888106
+  },
+  "slowdown_detector_state": {
+    "baseline_stage_time_ms": 1923.631238937378,
+    "baseline_std_ms": 384.55364755802486,
+    "batch_count": 81,
+    "last_global_step": 80,
+    "stage_times_ms": [
+      2304.975748062134,
+      2289.558172225952,
+      2309.857130050659,
+      2326.2486457824707,
+      2315.451145172119,
+      2307.518720626831,
+      2316.2906169891357,
+      2287.590265274048,
+      2281.674385070801,
+      2304.3601512908936
+    ],
+    "wallclock_sustained_duration_sec": 52.896947145462036,
+    "slowdown_detected_at_step": 58,
+    "slowdown_detected_at_global_step": 57
+  },
+  "optimizer_runtime_state": {
+    "baseline_warmup_steps": 50,
+    "baseline_frozen": true,
+    "baseline_count_compute": {
+      "0": 50,
+      "1": 50,
+      "2": 50,
+      "3": 50
+    },
+    "baseline_count_comm": {
+      "0": 50,
+      "1": 50,
+      "2": 50,
+      "3": 50
+    },
+    "baseline_compute_time": {
+      "0": 0.16245151519775397,
+      "1": 0.0677566933631897,
+      "2": 0.08053069114685059,
+      "3": 0.07005679368972778
+    },
+    "baseline_comm_time": {
+      "0": 0.004005725383758546,
+      "1": 0.0028189754486083983,
+      "2": 0.001868588924407959,
+      "3": 0.002169723510742188
+    },
+    "latest_compute_time": {
+      "0": 0.1587066650390625,
+      "1": 0.047141075134277344,
+      "2": 0.051557183265686035,
+      "3": 0.07029342651367188
+    },
+    "latest_comm_time": {
+      "0": 0.002649068832397461,
+      "1": 0.002446889877319336,
+      "2": 0.002408266067504883,
+      "3": 0.0013540983200073242
+    },
+    "suspect_gpu_id": 3,
+    "suspect_switch_counter": 0,
+    "progress_step": 80,
+    "progress_epoch": 1
+  },
+  "post_restart_observation_steps": 10,
+  "checkpoint_path": "./results/e2e_failover_bgload_gpu3_replan_strong_b128_e1_20260406_230448/failover_checkpoint_latest.pth"
+}

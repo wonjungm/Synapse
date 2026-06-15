@@ -1,0 +1,58 @@
+tspipe:
+  train:
+    deferred_batch_norm: false
+    save_model_every_iter: 100
+  model_split:
+    target:
+    - 10
+    - 7
+    - 7
+    online:
+    - 13
+    - 12
+    - 14
+  optimizer:
+    skip_optimizer: false
+    num_skip_initial_staleness: 0
+    gradient_accumulation: 1
+    reduce_verbose: false
+  gpipe_emulation:
+    enabled: true
+    num_ubatch: 1
+  async_param_update_emulation:
+    enabled: false
+  failover_restart:
+    gpu_assignment:
+    - 0
+    - 1
+    - 2
+    - 3
+    snet_stage_boundaries:
+    - - 0
+      - 13
+    - - 13
+      - 25
+    - - 25
+      - 43
+    - - 43
+      - 57
+    tnet_stage_boundaries:
+    - - 0
+      - 10
+    - - 10
+      - 17
+    - - 17
+      - 23
+    - - 23
+      - 30
+    trigger_policy: REPLAN
+    step_id: 110
+  hard_failover_restart:
+    source_config: /acpl-ssd10/Synapse-0320/benchmarks/soft_target/results/failover_test/failover-experiment/emergency_restart_config.json
+    source_type: hard_failure
+    config_source: legacy_failed_gpu
+    failed_gpu: 2
+    visible_devices:
+    - '0'
+    - '1'
+    - '3'

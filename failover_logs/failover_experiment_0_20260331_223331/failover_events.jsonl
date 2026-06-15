@@ -1,0 +1,1 @@
+{"timestamp": "2026-03-31T22:41:08.966871", "event_type": "gpu_failure", "gpu_id": 0, "partition_id": null, "old_config": null, "new_config": null, "recovery_time_ms": null, "details": {"failure_type": "health_check_failure", "timestamp": "2026-03-31T22:41:08.955094", "error_msg": "GPU health check failed or simulated failure"}}

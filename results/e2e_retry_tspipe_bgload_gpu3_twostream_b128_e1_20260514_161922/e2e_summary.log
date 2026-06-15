@@ -1,0 +1,8 @@
+[E2E] Run note: e2e_retry_tspipe_bgload_gpu3_twostream_b128_e1_20260514_161922
+[E2E] Run dir: ./results/e2e_retry_tspipe_bgload_gpu3_twostream_b128_e1_20260514_161922
+[E2E] Status: FAILED
+[E2E] Exit code: 1
+[E2E] Restart count: 0
+[E2E] Start time: 2026-05-14 16:36:31
+[E2E] End time:   2026-05-14 16:36:34
+[E2E] Total wall-clock time: 3s (0m 3s)

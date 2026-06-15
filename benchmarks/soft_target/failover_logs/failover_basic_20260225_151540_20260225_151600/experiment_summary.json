@@ -1,0 +1,33 @@
+{
+  "experiment_name": "failover_basic_20260225_151540",
+  "experiment_id": "failover_basic_20260225_151540_20260225_151600",
+  "start_time": "2026-02-25T15:16:00.278762",
+  "system_info": {
+    "cpu_count": 128,
+    "total_memory_gb": 1007.6440467834473,
+    "python_version": "sys.version_info(major=3, minor=9, micro=25, releaselevel='final', serial=0)",
+    "hostname": "ewha-acpl2"
+  },
+  "gpu_info": {
+    "0": {
+      "name": "NVIDIA RTX A6000",
+      "total_memory_gb": 47.4312744140625,
+      "compute_capability": "8.6"
+    },
+    "1": {
+      "name": "NVIDIA RTX A6000",
+      "total_memory_gb": 47.4312744140625,
+      "compute_capability": "8.6"
+    },
+    "2": {
+      "name": "NVIDIA RTX A6000",
+      "total_memory_gb": 47.4312744140625,
+      "compute_capability": "8.6"
+    },
+    "3": {
+      "name": "NVIDIA RTX A6000",
+      "total_memory_gb": 47.4312744140625,
+      "compute_capability": "8.6"
+    }
+  }
+}

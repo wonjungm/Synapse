@@ -1,0 +1,219 @@
+{
+  "timestamp": 1775734069.0396836,
+  "trigger_policy": "REPLAN",
+  "step_id": 130,
+  "partition": {
+    "gpu_assignment": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "snet_partition": [
+      11,
+      15,
+      21,
+      10
+    ],
+    "tnet_partition": [
+      10,
+      7,
+      8,
+      5
+    ],
+    "snet_stage_boundaries": [
+      [
+        0,
+        11
+      ],
+      [
+        11,
+        26
+      ],
+      [
+        26,
+        47
+      ],
+      [
+        47,
+        57
+      ]
+    ],
+    "tnet_stage_boundaries": [
+      [
+        0,
+        10
+      ],
+      [
+        10,
+        17
+      ],
+      [
+        17,
+        25
+      ],
+      [
+        25,
+        30
+      ]
+    ]
+  },
+  "alpha_comp": {
+    "0": 0.9847505150849631,
+    "1": 0.8277283688538383,
+    "2": 0.8000000000000003,
+    "3": 2.0885646064554666
+  },
+  "beta_comm": {
+    "0": 0.8414085507859305,
+    "1": 1.0000697880200489,
+    "2": 1.0588513808466584,
+    "3": 1.6060811139713969
+  },
+  "restart_overhead": {
+    "formula": "C_load + D_replan + R_replan * T_base",
+    "t_base": 0.6162521457672118,
+    "value": 49.182607288360586
+  },
+  "partition_transition": {
+    "policy": "REPLAN",
+    "previous_partition": {
+      "gpu_assignment": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "snet_partition": [
+        9,
+        11,
+        16,
+        21
+      ],
+      "tnet_partition": [
+        9,
+        6,
+        6,
+        9
+      ],
+      "snet_stage_boundaries": [
+        [
+          0,
+          9
+        ],
+        [
+          9,
+          20
+        ],
+        [
+          20,
+          36
+        ],
+        [
+          36,
+          57
+        ]
+      ],
+      "tnet_stage_boundaries": [
+        [
+          0,
+          9
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          15,
+          21
+        ],
+        [
+          21,
+          30
+        ]
+      ]
+    },
+    "previous_nominal_step_time": 0.2667303469305237,
+    "new_nominal_step_time": 0.34917788887023926
+  },
+  "slowdown_detector_state": {
+    "baseline_stage_time_ms": 6589.236736297607,
+    "baseline_std_ms": 13.748795047005055,
+    "baseline_skip_steps": 20,
+    "batch_count": 131,
+    "last_global_step": 130,
+    "stage_times_ms": [
+      8798.717975616455,
+      8817.220211029053,
+      8819.092988967896,
+      8840.45386314392,
+      8840.240716934204,
+      8815.592765808105,
+      8839.346647262573,
+      8831.975221633911,
+      8822.02935218811,
+      8807.907104492188
+    ],
+    "baseline_candidate_times_ms": [
+      6573.127508163452,
+      6580.538511276245,
+      6559.783458709717,
+      6563.357591629028,
+      6587.815999984741,
+      6604.150056838989,
+      6593.163967132568,
+      6593.99676322937,
+      6590.657472610474,
+      6593.937635421753
+    ],
+    "wallclock_sustained_duration_sec": 698.8166117668152,
+    "slowdown_detected_at_step": 52,
+    "slowdown_detected_at_global_step": 51
+  },
+  "optimizer_runtime_state": {
+    "baseline_warmup_steps": 50,
+    "baseline_frozen": true,
+    "baseline_count_compute": {
+      "0": 50,
+      "1": 50,
+      "2": 50,
+      "3": 50
+    },
+    "baseline_count_comm": {
+      "0": 50,
+      "1": 50,
+      "2": 50,
+      "3": 50
+    },
+    "baseline_compute_time": {
+      "0": 0.6072335910797118,
+      "1": 0.2178422164916992,
+      "2": 0.24252787828445432,
+      "3": 0.21083770751953124
+    },
+    "baseline_comm_time": {
+      "0": 0.009018554687499998,
+      "1": 0.0030880069732666018,
+      "2": 0.003221697807312012,
+      "3": 0.0025897097587585472
+    },
+    "latest_compute_time": {
+      "0": 0.5976613759994507,
+      "1": 0.18030095100402832,
+      "2": 0.18721473217010498,
+      "3": 0.48993706703186035
+    },
+    "latest_comm_time": {
+      "0": 0.0018188953399658203,
+      "1": 0.00295865535736084,
+      "2": 0.0037211179733276367,
+      "3": 0.00343167781829834
+    },
+    "suspect_gpu_id": 3,
+    "suspect_switch_counter": 0,
+    "progress_step": 130,
+    "progress_epoch": 1
+  },
+  "post_restart_observation_steps": 10,
+  "checkpoint_path": "./results/e2e_failover_bgload_gpu3_replan_v5_b512_e2_20260409_110953/failover_checkpoint_latest.pth"
+}

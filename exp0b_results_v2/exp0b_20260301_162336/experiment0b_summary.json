@@ -1,0 +1,64 @@
+[
+  {
+    "checkpoint_interval": 100,
+    "total_budget_sec": 1200,
+    "num_kills": 2,
+    "kill_time_offsets": [
+      211,
+      345
+    ],
+    "total_wallclock_sec": 1337.693920135498,
+    "total_steps_completed": 1317,
+    "avg_c_load_sec": 4.279636859893799,
+    "avg_rollback_steps": 44.0,
+    "total_downtime_sec_approx": 14.559273719787598,
+    "segments": [
+      {
+        "segment": 0,
+        "is_kill_segment": true,
+        "note": "exp0b_n100_20260301_162336_seg0",
+        "segment_runtime_planned_sec": 211.0,
+        "segment_duration_actual_sec": 212.22595047950745,
+        "steps_in_segment": 199,
+        "resume_checkpoint": "",
+        "c_load_sec": 0.0,
+        "resumed_batch_count": 0,
+        "last_ckpt_batch_count": 200,
+        "last_step_batch": 205,
+        "rollback_steps": 5,
+        "num_saves": 2
+      },
+      {
+        "segment": 1,
+        "is_kill_segment": true,
+        "note": "exp0b_n100_20260301_162336_seg1",
+        "segment_runtime_planned_sec": 132.77404952049255,
+        "segment_duration_actual_sec": 133.05757069587708,
+        "steps_in_segment": 77,
+        "resume_checkpoint": "/acpl-ssd10/Synapse-private/benchmarks/soft_target/results/exp0b_failover/exp0b_n100_20260301_162336_seg0/healthy_checkpoint_latest.pth",
+        "c_load_sec": 4.185102462768555,
+        "resumed_batch_count": 200,
+        "last_ckpt_batch_count": 0,
+        "last_step_batch": 83,
+        "rollback_steps": 83,
+        "num_saves": 0
+      },
+      {
+        "segment": 2,
+        "is_kill_segment": false,
+        "note": "exp0b_n100_20260301_162336_seg2",
+        "segment_runtime_planned_sec": 854.7164788246155,
+        "segment_duration_actual_sec": 981.1240224838257,
+        "steps_in_segment": 1041,
+        "resume_checkpoint": "/acpl-ssd10/Synapse-private/benchmarks/soft_target/results/exp0b_failover/exp0b_n100_20260301_162336_seg0/healthy_checkpoint_latest.pth",
+        "c_load_sec": 4.374171257019043,
+        "resumed_batch_count": 200,
+        "last_ckpt_batch_count": 1000,
+        "last_step_batch": 1047,
+        "rollback_steps": 0,
+        "num_saves": 10
+      }
+    ],
+    "run_stamp": "20260301_162336"
+  }
+]

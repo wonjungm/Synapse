@@ -1,0 +1,8 @@
+[E2E] Run note: e2e_failover_bgload_gpu3_replan_strongplus_b64_e1_20260410_012616
+[E2E] Run dir: ./results/e2e_failover_bgload_gpu3_replan_strongplus_b64_e1_20260410_012616
+[E2E] Status: INTERRUPTED_INT
+[E2E] Exit code: 130
+[E2E] Restart count: 5
+[E2E] Start time: 2026-04-10 01:26:17
+[E2E] End time:   2026-04-10 01:52:26
+[E2E] Total wall-clock time: 1569s (26m 9s)

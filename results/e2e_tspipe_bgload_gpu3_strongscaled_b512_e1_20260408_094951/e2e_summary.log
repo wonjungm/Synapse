@@ -1,0 +1,8 @@
+[E2E] Run note: e2e_tspipe_bgload_gpu3_strongscaled_b512_e1_20260408_094951
+[E2E] Run dir: ./results/e2e_tspipe_bgload_gpu3_strongscaled_b512_e1_20260408_094951
+[E2E] Status: INTERRUPTED_INT
+[E2E] Exit code: 130
+[E2E] Restart count: 0
+[E2E] Start time: 2026-04-08 09:49:51
+[E2E] End time:   2026-04-08 10:33:23
+[E2E] Total wall-clock time: 2612s (43m 32s)

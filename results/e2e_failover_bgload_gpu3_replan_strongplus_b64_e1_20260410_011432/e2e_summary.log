@@ -1,0 +1,8 @@
+[E2E] Run note: e2e_failover_bgload_gpu3_replan_strongplus_b64_e1_20260410_011432
+[E2E] Run dir: ./results/e2e_failover_bgload_gpu3_replan_strongplus_b64_e1_20260410_011432
+[E2E] Status: INTERRUPTED_TERM
+[E2E] Exit code: 143
+[E2E] Restart count: 0
+[E2E] Start time: 2026-04-10 01:14:32
+[E2E] End time:   2026-04-10 01:17:06
+[E2E] Total wall-clock time: 154s (2m 34s)

@@ -1,0 +1,1 @@
+{"timestamp": "2026-02-25T14:47:18.072596", "event_type": "gpu_failure_simulation_start", "gpu_id": 2, "partition_id": null, "old_config": null, "new_config": null, "recovery_time_ms": null, "details": {"method": "pid_based_sigkill", "start_time": "2026-02-25T14:47:18.072563", "killed_pids": [2926066], "description": "OS-level worker kill (SIGKILL)"}}
