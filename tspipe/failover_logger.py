@@ -1,4 +1,3 @@
-"""Failover 실험 로깅 및 결과 분석 시스템"""
 import json
 import os
 import time
@@ -14,7 +13,6 @@ import torch
 
 @dataclass
 class PerformanceMetrics:
-    """성능 메트릭 데이터"""
     timestamp: str
     batch_id: int
     iteration_time_ms: float
@@ -31,7 +29,6 @@ class PerformanceMetrics:
 
 @dataclass 
 class FailoverEvent:
-    """Failover 이벤트 기록"""
     timestamp: str
     event_type: str  # "gpu_failure", "recovery_start", "recovery_complete", "repartition"
     gpu_id: Optional[int]
@@ -46,7 +43,6 @@ class FailoverEvent:
 
 
 class FailoverExperimentLogger:
-    """Failover 실험 전체 로깅 및 분석"""
     
     def __init__(self, experiment_name: str, output_dir: str = "./failover_logs"):
         self.experiment_name = experiment_name
@@ -185,7 +181,6 @@ class FailoverExperimentLogger:
                     gpu_memory_used[gpu_id] = -1
                     
         except ImportError:
-            # pynvml이 없는 경우 PyTorch로 대체
             for gpu_id in range(torch.cuda.device_count()):
                 try:
                     with torch.cuda.device(gpu_id):
@@ -457,7 +452,6 @@ class FailoverExperimentLogger:
             print(f"JSONL 추가 실패 {filename}: {e}")
 
 
-# 전역 로거 인스턴스 (실험용)
 _experiment_logger: Optional[FailoverExperimentLogger] = None
 
 def get_experiment_logger() -> Optional[FailoverExperimentLogger]:
