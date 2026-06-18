@@ -1,4 +1,3 @@
-"""GPU 상태 모니터링 및 실패 감지 시스템"""
 import subprocess
 import threading
 import time
@@ -14,7 +13,6 @@ from tspipe.logger import Log
 
 
 class GPUFailureEvent:
-    """GPU 실패 이벤트 정보"""
     def __init__(self, gpu_id: int, failure_type: str, timestamp: datetime, error_msg: str = ""):
         self.gpu_id = gpu_id
         self.failure_type = failure_type
@@ -23,17 +21,14 @@ class GPUFailureEvent:
         self.recovery_timestamp: Optional[datetime] = None
         
     def mark_recovered(self):
-        """복구 시점 기록"""
         self.recovery_timestamp = datetime.now()
         
     def get_downtime_seconds(self) -> float:
-        """다운타임 계산 (초)"""
         if self.recovery_timestamp:
             return (self.recovery_timestamp - self.timestamp).total_seconds()
         return (datetime.now() - self.timestamp).total_seconds()
         
     def to_dict(self):
-        """로깅용 딕셔너리 변환"""
         return {
             'gpu_id': self.gpu_id,
             'failure_type': self.failure_type,
@@ -45,7 +40,6 @@ class GPUFailureEvent:
 
 
 class GPUHealthMonitor:
-    """GPU 건강 상태 모니터링 및 실패 감지"""
     
     def __init__(self, failure_callback: Callable[[GPUFailureEvent], None], 
                  check_interval: int = 5, experiment_log_file: str = None):
@@ -61,7 +55,6 @@ class GPUHealthMonitor:
         # GPU별 마지막 성공한 체크 시간 기록
         self.last_success_check: Dict[int, datetime] = {}
         
-        # 실험용: 강제로 실패시킬 GPU 목록
         self.force_fail_gpus: Set[int] = set()
         
         Log.i(f"GPUHealthMonitor initialized with {len(self.available_gpus)} GPUs")
@@ -251,7 +244,6 @@ class GPUHealthMonitor:
         # 콘솔 출력
         print(f"🔍 {log_message.strip()}")
         
-        # 파일 로그 (지정된 경우)
         if self.experiment_log_file:
             try:
                 with open(self.experiment_log_file, 'a', encoding='utf-8') as f:
