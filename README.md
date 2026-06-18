@@ -170,7 +170,9 @@ export TP_SOCKET_IFNAME=lo
 
 ### 1. 데이터 준비
 
-ImageNet100 실험은 원본 ImageNet 이미지가 저장소에 포함되어 있지 않으므로, 로컬 ImageNet 경로를 준비해야 합니다.
+ImageNet100 실험은 원본 ImageNet 이미지가 저장소에 포함되어 있지 않으므로, 아래 링크에서 데이터셋을 다운받은 후 로컬 ImageNet 경로를 준비해야 합니다.
+
+** 다운 링크 : https://www.image-net.org/download.php **
 
 예상 구조:
 
