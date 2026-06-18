@@ -19,7 +19,6 @@ from tspipe.utils import use_device
 import socket
 
 def find_free_port(start_port=31101, max_attempts=1000):
-    """사용 가능한 포트 찾기 (SO_REUSEADDR 옵션 포함)"""
     for port in range(start_port, start_port + max_attempts):
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -30,10 +29,8 @@ def find_free_port(start_port=31101, max_attempts=1000):
             continue
     raise RuntimeError(f"Could not find free port in range {start_port}-{start_port + max_attempts}")
 
-# 동적 포트 할당 (더 넓은 범위에서)
 import os
 
-# 함수로 변경: 매 호출마다 환경변수 재읽기 (restart 시 새 포트값 적용)
 def _get_nccl_rpc_ports():
     """Get NCCL and RPC ports from environment or defaults."""
     if 'PYTORCH_DISTRIBUTED_NCCL_START_PORT' in os.environ:
@@ -45,7 +42,6 @@ def _get_nccl_rpc_ports():
         rpc_p = find_free_port(start_port=_base_port + 100)
         return nccl_p, rpc_p
 
-# 초기값 설정
 PYTORCH_DISTRIBUTED_NCCL_PORT, PYTORCH_DISTRIBUTED_RPC_PORT = _get_nccl_rpc_ports()
 
 
