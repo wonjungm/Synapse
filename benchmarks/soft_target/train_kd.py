@@ -338,7 +338,6 @@ def _persist_latest_failover_coefficients(
     source: str = "runtime",
     step_id: Optional[int] = None,
 ):
-    """Persist the latest learned alpha/beta so hard-failure restart can reuse them."""
     if not isinstance(alpha_comp, dict) or not isinstance(beta_comm, dict):
         return
 
@@ -448,12 +447,6 @@ def _apply_restart_partition_to_tspipe_yaml(unparsed_args, restart_payload: dict
 
 
 def _load_failover_bootstrap(save_root: str, unparsed_args, snet, tnet, optimizer, steps_per_epoch: int, skip_partition_yaml_apply=False, skip_checkpoint_restore=False):
-    """Load restart_config/checkpoint and return resume info for failover restart.
-    
-    Args:
-        skip_partition_yaml_apply: True면 YAML 파일 수정 건너뜀 (이미 첫 번째 호출에서 한 경우)
-        skip_checkpoint_restore: True면 checkpoint 로드 건너뜀 (이미 첫 번째 호출에서 한 경우)
-    """
     failover_restart_path = os.path.join(save_root, "failover_restart_config.json")
     emergency_restart_path = os.path.join(save_root, "emergency_restart_config.json")
     legacy_restart_path = os.path.join(save_root, "restart_config.json")
@@ -515,8 +508,6 @@ def _load_failover_bootstrap(save_root: str, unparsed_args, snet, tnet, optimize
         except Exception:
             return -1
 
-    # Guard: restart partition must match current model layer counts.
-    # Otherwise (e.g., stale config from another model family), skip restart payload.
     p = restart_payload.get("partition", {})
     sp = p.get("snet_partition")
     tp = p.get("tnet_partition")
@@ -544,7 +535,6 @@ def _load_failover_bootstrap(save_root: str, unparsed_args, snet, tnet, optimize
                     "optimizer_runtime_state": None,
                 }
 
-    # ✅ Apply new partition to YAML if restart payload has one (but skip if already applied in first call)
     if restart_payload.get("partition") and not skip_partition_yaml_apply:
         logging.error("🔄 Failover restart detected. Applying new partition to YAML...")
         _apply_restart_partition_to_tspipe_yaml(unparsed_args, restart_payload)
@@ -1960,7 +1950,6 @@ if __name__ == "__main__":
                         logging.warning(f"Process group destroy (non-fatal): {ex}")
 
                 # 3) 남아있는 자식 프로세스 정리
-                # 종료 지연의 주범이라 여기만은 기본적으로 수행
                 if do_children and _remaining() > 0:
                     try:
                         children = mp.active_children()
@@ -1991,7 +1980,6 @@ if __name__ == "__main__":
                     except Exception as ex:
                         logging.warning(f"Child cleanup (non-fatal): {ex}")
 
-                # 4) 소켓 대기는 기본 0, 필요 시에만 짧게
                 if wait_sec > 0 and _remaining() > 0:
                     time.sleep(min(wait_sec, max(0.0, _remaining())))
 
@@ -2001,7 +1989,6 @@ if __name__ == "__main__":
             except Exception as cleanup_error:
                 logging.error(f"Cleanup error (continuing anyway): {cleanup_error}")
 
-            # 파이썬 종료 지연 방지용 강제 종료
             os._exit(42)
 
         raise
