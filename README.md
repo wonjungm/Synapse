@@ -22,6 +22,55 @@ Synapse는 TSPipe 기반의 지식 증류(Knowledge Distillation, KD) 파이프�
 
 주요 실험 대상은 ImageNet100 기반 KD 학습이며, teacher/student 모델 예시는 `vit_large`, `resnet152`, `resnet50`, `vit_base` 등을 포함합니다. Failover 실험은 정상 TSPipe 실행과 slowdown/failure injection이 있는 실행을 비교하여, 재분할 및 재시작 정책이 전체 ETA와 처리량에 미치는 영향을 관찰합니다.
 
+## 구현 구성 블록
+
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <b>Runtime</b><br/>
+      <img src="https://img.shields.io/badge/Python%203.9-3776AB?style=plastic&logo=python&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/CUDA-Multi%20GPU-76B900?style=plastic&logo=nvidia&logoColor=white"/>
+    </td>
+    <td align="center" width="25%">
+      <b>KD Training</b><br/>
+      <img src="https://img.shields.io/badge/PyTorch-Teacher--Student-EE4C2C?style=plastic&logo=pytorch&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/timm%20%7C%20Transformers-Model%20Zoo-111827?style=plastic"/>
+    </td>
+    <td align="center" width="25%">
+      <b>Pipeline Runtime</b><br/>
+      <img src="https://img.shields.io/badge/TSPipe-Extended%20Runtime-2D3748?style=plastic"/><br/>
+      <img src="https://img.shields.io/badge/Pipeline%20Parallelism-KD%20Scheduling-4B5563?style=plastic"/>
+    </td>
+    <td align="center" width="25%">
+      <b>Failover Policy</b><br/>
+      <img src="https://img.shields.io/badge/ETA%20Planner-Policy%20Selector-2563EB?style=plastic"/><br/>
+      <img src="https://img.shields.io/badge/KEEP%20%7C%20REPLAN%20%7C%20DEGRADE-Failover-DC2626?style=plastic"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Monitoring</b><br/>
+      <img src="https://img.shields.io/badge/PyNVML-GPU%20Health-76B900?style=plastic&logo=nvidia&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/nvidia--smi-GPU%20Status-111827?style=plastic"/>
+    </td>
+    <td align="center">
+      <b>Config & Logs</b><br/>
+      <img src="https://img.shields.io/badge/PyYAML-Config-4B5563?style=plastic"/><br/>
+      <img src="https://img.shields.io/badge/JSON%20%7C%20JSONL-Experiment%20Logs-6B7280?style=plastic"/>
+    </td>
+    <td align="center">
+      <b>Analysis</b><br/>
+      <img src="https://img.shields.io/badge/NumPy-Numerical%20Analysis-013243?style=plastic&logo=numpy&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/pandas-Result%20Summary-150458?style=plastic&logo=pandas&logoColor=white"/>
+    </td>
+    <td align="center">
+      <b>Visualization</b><br/>
+      <img src="https://img.shields.io/badge/matplotlib-Graphs-11557C?style=plastic"/><br/>
+      <img src="https://img.shields.io/badge/TensorBoard-Training%20Logs-FF6F00?style=plastic"/>
+    </td>
+  </tr>
+</table>
+
 ## Source Code 설명
 
 ### 핵심 디렉터리
